@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyB3EI1fYQEeWOzqyX9JQuPYbC4penRCpZo",
+            authDomain: "mycomplex-c3986.firebaseapp.com",
+            databaseURL: "https://mycomplex-c3986-default-rtdb.firebaseio.com",
+            projectId: "mycomplex-c3986",
+            storageBucket: "mycomplex-c3986.appspot.com",
+            messagingSenderId: "892558324922",
+            appId: "1:892558324922:web:cb8ad48b8f09babd2b3e83",
+            measurementId: "G-D7VP5KYPCZ"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        const messaging = firebase.messaging();
+
+        messaging.requestPermission().then(function() {
+            console.log("Notification permissing generated");
+        }).catch(function(err) {
+            console.log("Unable to ger permission to notify", err);
+        })
+
+        function getResisterToken() {
+            messaging.getToken().then(function(currentToken) {
+                if (currentToken) {
+                    console.log(currentToken);
+                    sendTokenToServer(currentToken);
+                } else {
+                    console.log("No instance ID token available.Request permissing to genetate one.");
+                    sendTokenToServer(false);
+                }
+            }).catch(function(err) {
+                console.log("An error occured while tetriving token", err);
+                sendTokenToServer(false);
+            })
+
+
+        }
+
+        function sendTokenToServer(sent) {
+            window.localStorage.setItem('sentToServer', sent ? '1' : '0');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

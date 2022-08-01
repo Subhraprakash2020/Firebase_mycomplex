@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="form-group">
+                <label for="zip">Room</label>
+                <input type="text" class="form-control" id="room" placeholder="Enter room">
+            </div>
+            <div class="form-group">
+                <label for="zip">Phone</label>
+                <input type="number" class="form-control" id="phone" placeholder="Enter the Phone number">
+            </div>
+            <div class="form-group">
+                <label for="zip">Whom to meet</label>
+                <input type="text" class="form-control" id="meet" placeholder="Whom to meet">
+            </div>
+            <div class="webcam" style="float: right;">
+                <button type="button" id="btnActivateCamera">Take a Picture</button>
+                <button type="button" id="btnDeactivateCamera" class="d-none">Stop Camera</button>
+                <br />
+                <video id="capturevideo" width="230" height="230" class="d-none"></video>
+                <br />
+                <button type="button" id="btnCapture" class="d-none">Capture</button>
+                <hr />
+                <canvas id="capturecanvas" width="230" height="230" class="d-none"></canvas>
+            </div>
+            <input type="submit" class="btn btn-primary addValue" id="get" value="Submit">
+            </form>
+
+            <div class="add_data"></div>
+        </div>
+        <div class="popup"></div>
+
+    </div>
+
+
+    <!-- dbRef.on("child_added", snap => { var stap = snap.val(); console.log("snap", stap) $('.add_data').append('
+        <tr>
+            <td>' + stap + '
+                <td>
+        </tr>') }) -->
+    <!-- dbRef.orderByChild("room").equalTo(room1).once("value", (snap) => {
+            console.log(snap.val());
+            var ss = snap.val();
+
+            console.log("ss", ss);
+
+        }); -->
+    <script src=" https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script src="coustom.js"></script>
+
+</body>
+
+
+</html>

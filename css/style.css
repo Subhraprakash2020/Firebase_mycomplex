@@ -1,0 +1,37 @@
+.zp {
+    padding-bottom: 15px;
+}
+
+.edit {
+    position: relative;
+    background: #fff;
+    text-align: center;
+    width: 35rem;
+    height: 34rem;
+    padding-top: 26px;
+    margin: 5rem auto;
+    -webkit-box-shadow: 0px 4px 22px -6px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 4px 22px -6px rgb(0 0 0 / 75%);
+}
+
+.edit_model {
+    display: none;
+    position: fixed;
+    top: 0;
+    margin-left: 29%;
+    animation-name: animatetop;
+    animation-duration: .4s;
+}
+
+.popup {
+    border: 1px solid;
+    width: 500px;
+    height: 200px;
+    position: fixed;
+    margin-left: 33%;
+    top: 12%;
+    background-color: black;
+    color: white;
+    display: none;
+}
